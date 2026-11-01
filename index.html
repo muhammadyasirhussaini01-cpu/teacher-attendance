@@ -1,0 +1,30 @@
+<"DOCTYPE html">
+<img src="file:///storage/emulated/0/Android/media/com.openai.chatgpt/file_000000008f0881f4a16a870a6cdaea91.png" alt="School Logo" style="width:150px; display:block; margin:auto;">
+High tech international school Bauchi 
+Teacher attendance 
+Welcome to the Teacher attendance system
+<p id="date"></p>
+<script>
+    document.getElementById("date").textContent =
+  new Date().toLocaleDateString("en-GB", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+  });  
+  </script>        
+<ol>
+  <li>Muhammad <span id="time-muhammad">Not marked</span> <input type="checkbox" onchange="if(this.checked) recordTime('muhammad')"> Present <input type="checkbox"> Absent</li>
+
+<li>Amina <span id="time-amina">Not marked</span> <input type="checkbox" onchange="if(this.checked) recordTime('amina')"> Present <input type="checkbox"> Absent</li>
+
+<li>Aminu Abdullahi <span id="time-aminu">Not marked</span> <input type="checkbox" onchange="if(this.checked) recordTime('aminu')"> Present <input type="checkbox"> Absent</li>
+<script>
+ function recordTime(teacher) {
+ const now = new Date();
+ const time = now.toLocaleTimeString();
+ const date = now.toLocaleDateString();
+ document.getElementById("time-" + teacher).textContent =
+ "Time In: " + time + " | Date: " + date;
+ }
+ </script>
